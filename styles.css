@@ -1,0 +1,172 @@
+body {
+    background: radial-gradient(circle, #121212, #1e1e2f);
+    color: #e0e0e0;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: fadeInBackground 2s ease-in-out;
+}
+
+.title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #4caf50;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    animation: fadeInTitle 2s ease-out;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+    padding: 12px 18px;
+    border: 1px solid #3e3e3e;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background-color: #353535;
+    border-color: #4caf50;
+    transform: scale(1.05);
+}
+
+input[type="file"]:disabled {
+    background-color: #202020;
+    color: #555;
+    border-color: #333;
+    cursor: not-allowed;
+}
+
+canvas {
+    width: 90%;
+    max-width: 1200px;
+    height: 350px;
+    background: linear-gradient(135deg, #181818, #222222);
+    border: 2px solid #4caf50;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 5px 15px rgba(76, 175, 80, 0.3);
+    margin-bottom: 30px;
+    animation: glowEffect 3s infinite alternate;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #43a047;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.5);
+}
+
+button:disabled {
+    background-color: #3a3a3a;
+    color: #757575;
+    cursor: not-allowed;
+}
+
+/* Floating animation for the title */
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle fade-in effect for the background */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Glow animation for the canvas */
+@keyframes glowEffect {
+    0% {
+        border-color: #4caf50;
+        box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    }
+    100% {
+        border-color: #81c784;
+        box-shadow: 0 10px 30px rgba(129, 199, 132, 0.6);
+    }
+}
+
+/* Tooltips for better UX */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #4caf50;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    canvas {
+        height: 250px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    input[type="file"] {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+}
