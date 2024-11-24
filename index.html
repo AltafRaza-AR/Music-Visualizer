@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Live Music Visualizer that displays interactive audio frequencies from the microphone.">
+    <title>🎶 Live Music Visualizer 🎶</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">🎶 Live Music Visualizer 🎶</h1>
+
+        <div class="controls">
+            <button id="start-button" class="tooltip">
+                Start Microphone Input
+                <span class="tooltiptext">Click to enable microphone and start visualizing live audio.</span>
+            </button>
+            <button id="stop-button" class="tooltip" disabled>
+                Stop Microphone Input
+                <span class="tooltiptext">Click to stop microphone input and clear the visualizer.</span>
+            </button>
+        </div>
+
+        <canvas id="visualizer" aria-label="Music visualizer"></canvas>
+
+        <footer>
+            <p>Developed by <strong>Md Altaf Raza</strong> | Sharda University</p>
+            <p>For educational purposes only.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
